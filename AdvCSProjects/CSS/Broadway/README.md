@@ -6,7 +6,7 @@ The site has some style rules to begin with. You will improve the layout and pos
 
 ## Your Tasks
 
-1.  The <header> currently scrolls with the rest of the document.
+1.  The \<header\> currently scrolls with the rest of the document.
 Set its position property so that it stays stuck to the top of the window when the document is scrolled.
 
 2. The <header> has shrunk!
