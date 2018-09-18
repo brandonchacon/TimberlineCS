@@ -4,10 +4,6 @@ In this project, you will follow step-by-step instructions to fix a fictional re
 
 In order to complete this project, you must know how to set an element's `height`, `width`, `padding`, `border`, and `margin` using CSS.
 
-## Instructions
--  please `fork` and `clone` this project to your own account
--  please submit a `pull request` when completed
-
 # Tasks
 
 ### 1. Add width values to the following elements:
