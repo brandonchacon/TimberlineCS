@@ -14,7 +14,7 @@ The purpose of this project is to create a digital portfolio.  The portfolio you
 - https://skillcrush.com/2015/03/12/impressive-tech-portfolio/
 - https://www.smashingmagazine.com/2013/06/workflow-design-develop-modern-portfolio-website/
 
-3. Brainstorm. Your portfolio should consist of the following sections (at a minimum).  Within each section, think of what you want to include.  For each section, you may not have much, or anything at all, but as you grow as a developer so to will the content.  
+3. Brainstorm. Your portfolio should consist of the following sections (at a minimum).  Within each section, think of what you want to include.  For each section, you may not have much, or anything at all, but as you grow as a developer so too will the content.  
 
 - Introduction to you
 - Hobbies/Interests/Extra-curricular
@@ -41,8 +41,12 @@ The purpose of this project is to create a digital portfolio.  The portfolio you
 
 8. Make your site scalable.
 
-- Your site should scale to different browsers other than your computer.  Your site should scale to tablets, phones, etc. 
+- Your site should scale to different browsers other than your computer.  Your site should also scale to tablets, phones, etc. 
 
 9. Test, test, test!  
 
-- Test your site on as many browsers and devices as you can to ensure cross-compatibility.  
+- Test your site on as many browsers and devices as you can to ensure cross-compatibility. 
+
+10.  Grade your site against the project requirements below.
+
+- Coming soon! 
