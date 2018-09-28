@@ -39,14 +39,18 @@ The purpose of this project is to create a digital portfolio.  The portfolio you
 
 - Now that you have all the elements, it is time to put them together to build a site that reflects YOU.  If you get stuck on how to style or position an element, refer to the course content up to this point or venture out to the Internet to find more help.  
 
-8. Make your site scalable.
+8. Publish your site
+
+- Once you are done, launch your site on Azure
+
+9. Make your site scalable.
 
 - Your site should scale to different browsers other than your computer.  Your site should also scale to tablets, phones, etc. 
 
-9. Test, test, test!  
+10. Test, test, test!  
 
 - Test your site on as many browsers and devices as you can to ensure cross-compatibility. 
 
-10.  Grade your site against the project requirements below.
+11.  Grade your site against the project requirements below.
 
 - Coming soon! 
