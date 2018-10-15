@@ -281,6 +281,10 @@ To see all of the properties and methods on the Math object, take a look at the 
 
 - [ ] Use the [JavaScript documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) to find a method on the built-in Number object that checks if a number is an integer.  Put the number 2017 in the parentheses of the method and use console.log() to print the result.
 
+### Get credit for this assignment
+
+- [ ] Once you have completed all of the above, have Ms. Pluska mark this assignment complete. 
+
 
 
 
