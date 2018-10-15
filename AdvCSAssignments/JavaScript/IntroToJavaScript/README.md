@@ -8,6 +8,8 @@ In this lesson, you will learn introductory coding concepts including data types
 
 ### Getting Started
 
+All modern browsers are capabable to rendering javascript, which makes developing in javascript quick and easy. 
+
 1. First create a new folder on your computer called IntroToJavaScript.  Then, open the folder in VS Code.
 
 2. Add two new files to this folder, 
@@ -26,33 +28,53 @@ In this lesson, you will learn introductory coding concepts including data types
 </html>
 ``` 
 
+### Using the console
+
+The console is a panel that displays important messages, like errors, for developers. Much of the work the computer does with our code is invisible to us by default. If we want to see things appear on our screen, we can print, or log, to our console directly.
+
+In JavaScript, the console keyword refers to an object, a collection of data and actions, that we can use in our code. Keywords are words that are built into the JavaScript language, so the computer will recognize them and treats them specially.
+
+One action, or method, that is built into the console object is the .log() method. When we write console.log() what we put inside the parentheses will get printed, or logged, to the console.
+
+It's going to be very useful for us to print values to the console, so we can see the work that we're doing.
+
+```
+console.log(5);
+
+```
+This example logs 5 to the console. The semicolon denotes the end of the line, or statement. Although in JavaScript your code will usually run as intended without a semicolon, we recommend learning the habit of ending each statement with a semi-colon so you never leave one out in the few instances when they are required.
+
+To view the log simply right click on the webpage where your javascript is running, then select inspect.  The console log will appear as a window in the developer tools menu. 
+
+- []Return to VS Code.  In your app.js page, write a line of code that logs your age.  Refresh your index.html page in your browswer.  Then right click and select inspect. Locate the console window to see the output.
+
+2.  On the next line, log a number representing the number of weeks you've been programming.
+
+### Adding Comments
+
+As we write JavaScript, we can write comments in our code that the computer will ignore as our program runs. These comments exist just for human readers.
+
+Comments can explain what the code is doing, leave instructions for developers using the code, or add any other useful annotations.
+
+There are two types of code comments in JavaScript:
+
+- A single line comment will comment out a single line and is denoted with two forward slashes // preceding it.
+
+// Prints 5 to the console
+console.log(5);
+You can also use a single line comment to comment after a line of code:
+
+console.log(5);  // Prints 5
 
 
 
 
-4. Still inside of the .grid rule set, set grid-template-columns to six equal sections using the fr measurement.  When you run your code, don't panic! The CSS is just trying to organize our content based off of our instructions. In a later section, you will  learn how to style the <div>s so they take up the necessary column widths.
 
-5. Refactor the previous exercise's code using the repeat() function. After that, refactor the grid-template-rows and grid-templates-columns code using the grid-template property. 
 
-6. Now, let's fix that broken page layout. Using grid-column-start and grid-column-end, style the <header> element so that it extends across all of the columns. Now, do the same for .banner, .about, and footer.
 
-7. Use grid-column to cause .address to span the first two columns, .hours to span the 3rd and 4th, and .call-us to span the 5th and 6th.
 
-8. In the .one and .two rule sets, use grid-column to have each <div> span three columns in the 5th row.
 
-9. Now, give your content some wiggle room. Return to the .grid rule set, add a grid-column-gap property, and set its value to 20 pixels. Notice which parts of the page have changed.
 
-10. Now, lay out the mobile version. For this grid, we want all of the content to occupy one column. Within the @media rule, inside the .grid rule set, add the grid-template-columns property and set its value to 100%. 
-
-11. We also need to specify additional rows. Add grid-template-rows and have its value be the same as the desktop version. Remember that each value is equal to a row.  To include more rows, split the fourth value into three equal values. Use the same process to turn the fifth row into two new rows. Try to practice your refactoring on this one!
-
-12. Use grid-row to define the starting row of the information blocks (.address, .hours, and .call-us) and testimonial blocks (.one and .two), and how many rows they will span.
-
-13. We also have to specify that these blocks now only take up one column of space. Add grid-column: 1 / span 1; to their rule sets.
-
-14.  Rather than have gaps between columns, we now want to have gaps between the rows.  Return to the .grid rule set and add  the grid-row-gap property so that there is a 20 pixel gap between the rows.
-
-15. But what if we don''t want there to be a gap between all of our rows? We can avoid the grid-row-gap rule by using negative margins. In header, .banner, and .about, set margin-bottom to -20px. For the footer, set margin-top to -20px.
 
 
 
