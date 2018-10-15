@@ -46,7 +46,7 @@ This example logs 5 to the console. The semicolon denotes the end of the line, o
 
 To view the log simply right click on the webpage where your javascript is running, then select inspect.  The console log will appear as a window in the developer tools menu. 
 
-- []Return to VS Code.  In your app.js page, write a line of code that logs your age.  Refresh your index.html page in your browswer.  Then right click and select inspect. Locate the console window to see the output.
+- [ ] Return to VS Code.  In your app.js page, write a line of code that logs your age.  Refresh your index.html page in your browswer.  Then right click and select inspect. Locate the console window to see the output.
 
 2.  On the next line, log a number representing the number of weeks you've been programming.
 
