@@ -123,9 +123,231 @@ All comparison statements evaluate to either true or false and are made up of:
 
 Let's practice using these comparison operators!
 
+- [ ] Using let, create a variable named hungerLevel and set it equal to 7.
+
+- [ ] Write an if...else statement using a comparison operator. The condition should check if hungerLevel is greater than 7. If so, the conditional statement should log, 'Time to eat!'. Otherwise, it should log 'We can eat later!'.
+
+After you press run, play around with the condition by tweaking the comparison of hungerLevel by using different operators such as <=,>=,>, and <.
+
+### Logical Operators
+
+Working with conditionals means that we will be using booleans, true or false values. In JavaScript, there are operators that work with boolean values known as logical operators. We can use logical operators to add more sophisticated logic to our conditionals. There are three logical operators:
+
+- the and operator (&&)
+- the or operator (||)
+- the not operator, otherwise known as the bang operator (!)
+
+When we use the && operator, we are checking that two things are true:
+
+```
+if (stopLight === 'green' && pedestrians === 0) {
+  console.log('Go!');
+} else {
+  console.log('Stop');
+}
+```
+
+When using the && operator, both conditions must evaluate to true for the entire condition to evaluate to true and execute. Otherwise, if either condition is false, the && condition will evaluate to false and the else block will execute.
+
+If we only care about either condition being true, we can use the || operator:
+
+```
+if (day === 'Saturday' || day === 'Sunday') {
+  console.log('Enjoy the weekend!');
+} else {
+  console.log('Do some work.');
+}
+```
+
+When using the || operator, only one of the conditions must evaluate to true for the overall statement to evaluate to true. In the code example above, if either day === 'Saturday' or day === 'Sunday' evaluates to true the if's condition will evaluate to true and its code block will execute. If the first condition in an || statement evaluates to true, the second condition won't even be checked. Only if day === 'Saturday' evaluates to false will day === 'Sunday' be evaluated. The code in the else statement above will execute only if both comparisons evaluate to false.
+
+The ! not operator reverses, or negates, the value of a boolean:
+
+```
+let excited = true;
+console.log(!excited); // Prints false
+
+let sleepy = false;
+console.log(!sleepy); // Prints true
+```
+Essentially, the ! operator will either take a true value and pass back false, or it will take a false value and pass back true.
+
+Logical operators are often used in conditional statements to add another layer of logic to our code.
+
+- [ ] Create a let variable called mood and assign the value "sleepy" to it.
+
+- [ ] Create a let variable called tirednessLevel and assign the value 6 to it. 
+
+- [ ] Create an if...else statement that checks if mood is 'sleepy' and tirednessLevel is greater than 8.
+
+If both conditions evaluate to true, then console.log() the string 'time to sleep'. Otherwise, we should console.log() 'not bed time yet'.
+
+After you press "Run", play around with the || operator and the ! operator! What happens if you negate the value of the entire statement with ! and switch to || instead of &&?
+
+### Truthy and Falsy
+
+Let's consider how non-boolean data types, like strings or numbers, are evaluated when checked inside a condition.
+
+Sometimes, you'll want to check if a variable exists and you won't necessarily want it to equal a specific value— you'll only check to see if the variable has been assigned a value.
+
+Here's an example:
+
+```
+let myVariable = 'I Exist!';
+if (myVariable) {
+   console.log(myVariable)
+} else {
+   console.log('The variable does not exist.')
+}
+```
+
+The code block in the if statement will run because myVariable has a truthy value; even though the value of myVariable is not explicitly the value true, when used in a boolean or conditional context, it evaluates to true because it has been assigned a non-falsy value.
+
+So which values are falsy— or evaluate to false when checked as a condition? The list of falsy values includes:
+
+- 0
+- Empty strings like "" or ''
+- null which represent when there is no value at all
+- undefined which represent when a declared variable lacks a value
+- NaN, or Not a Number
+
+Here’s an example with numbers:
+
+```
+let numberOfApples = 0;
+
+if (numberOfApples){
+   console.log('Let us eat apples!');
+} else {
+   console.log('No apples left!');
+}
+
+// Prints 'No apples left!'
+```
+
+The condition evaluates to false because the value of the numberOfApples is 0. Since 0 is a falsy value, the code block in the else statement will run.
+
+- [ ] Copy and paste the code block below into your app.js file. Change the value of wordCount so that it is truthy. This value should still be a number.
+
+```
+let wordCount = 0;
+
+if (wordCount) {
+  console.log("Great! You've started your work!");
+} else {
+  console.log('Better get to work!');
+}
 
 
+let favoritePhrase = 'Hello World!';
 
+if (favoritePhrase) {
+  console.log("This string doesn't seem to be empty.");
+} else {
+  console.log('This string is definitely empty.');
+}
+```
+- [ ] Change the value of favoritePhrase so that it is still a string but falsy.
+
+### Truthy and Falsy Assignment
+
+Truthy and falsy evaluations open a world of short-hand possibilities!
+
+Say you have a website and want to take a user's username to make a personalized greeting. Sometimes, the user does not have an account, making the username variable falsy. The code below checks if username is defined and assigns a default string if it is not:
+
+```
+let defaultName;
+if (username) {
+  defaultName = username;
+} else {
+  defaultName = 'Stranger';
+}
+```
+If you combine your knowledge of logical operators you can use a short-hand for the code above. In a boolean condition, JavaScript assigns the truthy value to a variable if you use the || operator in your assignment:
+
+```
+let defaultName = username || 'Stranger';
+```
+
+Because || or statements check the left-hand condition first, the variable defaultName will be assigned the actual value of username if is truthy, and it will be assigned the value of 'Stranger' if username is falsy. This concept is also referred to as short-circuit evaluation.
+
+- [ ] Copy and paste the code below into your app.js file.  Then, use short-circuit evaluation to assign a value to writingUtensil. Do not edit tool yet, we'll return to tool in the next step. Assign to writingUtensil the value of tool and if tool is falsy, assign a default value of 'pen'.
+
+```
+let tool = '';
+
+// Use short circuit evaluation to assign  writingUtensil variable below:
+let writingUtensil
+
+console.log(`The ${writingUtensil} is mightier than the sword.`);
+```
+
+- [ ] Notice that text 'The pen is mightier than the sword' logged to the console. Which means the value of writingUtensil is 'pen'.  What if we reassign the value of tool to 'marker'. Let's see what happens to the value of writingUtensil.
+
+### Ternary Operator
+
+In the spirit of using short-hand syntax, we can use a ternary operator to simplify an if...else statement.
+
+Take a look at the if...else statement example:
+
+```
+let isNightTime = true;
+
+if (isNightTime) {
+  console.log('Turn on the lights!');
+} else {
+  console.log('Turn off the lights!');
+}
+```
+
+We can use a ternary operator to perform the same functionality:
+
+```
+isNightTime ? console.log('Turn on the lights!') : console.log('Turn off the lights!');
+```
+
+In the example above:
+
+- The condition, isNightTime, is provided before the ?.
+- Two expressions follow the ? and are separated by a colon :.
+- If the condition evaluates to true, the first expression executes.
+- If the condition evaluates to false, the second expression executes.
+
+Like if...else statements, ternary operators can be used for conditions which evaluate to true or false.
+
+- [ ] Copy and paste the following code into your app.js file, 
+
+```
+let isLocked = false;
+
+if (isLocked) {
+  console.log('You will need a key to open the door.');
+} else {
+  console.log('You will not need a key to open the door.');
+}
+
+let isCorrect = true;
+
+if (isCorrect) {
+  console.log('Correct!');
+} else {
+  console.log('Incorrect!');
+}
+
+let favoritePhrase = 'Love That!';
+
+if (favoritePhrase === 'Love That!') {
+  console.log('I love that!');
+} else {
+  console.log("I don't love that!");
+}
+```
+
+- [ ] Refactor, or edit, the first if...else block to use a ternary operator.
+
+- [ ] Refactor the second if...else block to use a ternary operator.
+
+- [ ] Refactor the third if...else block to use a ternary operator.
 
 ### Get credit for this assignment
 
