@@ -121,7 +121,7 @@ If you're trying to decide between which keyword to use, let or const, think abo
 entree = 'Tacos';
 ```
 
-###Mathematical Assignment Operators
+### Mathematical Assignment Operators
 
 Let's consider how we can use variables and math operators to calculate new values and assign them to a variable. Check out the example below:
 
