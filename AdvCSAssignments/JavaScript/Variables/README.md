@@ -281,7 +281,7 @@ let newVariable = 'Playing around with typeof.';
 
 - [ ] Since you assigned this new value to newVariable, it has a new type! On the line below your reassignment, use console.log() to print typeof newVariable again.
 
-### Creat a temperature converter
+### Create a temperature converter
 
 - [ ] The forecast today is 293 Kelvin. To start, create a variable named kelvin, and set it equal to 293.  The value saved to kelvin will stay constant. Choose the variable type with this in mind.
 
