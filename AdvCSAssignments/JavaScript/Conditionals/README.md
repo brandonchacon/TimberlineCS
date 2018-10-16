@@ -349,6 +349,160 @@ if (favoritePhrase === 'Love That!') {
 
 - [ ] Refactor the third if...else block to use a ternary operator.
 
+### Else If Statements
+
+We can add more conditions to our if...else with an else if statement. The else if statement allows for more than two possible outcomes. You can add as many else if statements as you’d like, to make more complex conditionals!
+
+The else if statement always comes after the if statement and before the else statement. The else if statement also takes a condition. Let’s take a look at the syntax:
+
+```
+let stopLight = 'yellow';
+
+if (stopLight === 'red') {
+  console.log('Stop!');
+} else if (stopLight === 'yellow') {
+  console.log('Slow down.');
+} else if (stopLight === 'green') {
+  console.log('Go!');
+} else {
+  console.log('Caution, unknown!');
+}
+```
+The else if statements allow you to have multiple possible outcomes. if/else if/else statements are read from top to bottom, so the first condition that evaluates to true from the top to bottom is the block that gets executed.
+
+In the example above, since stopLight === 'red' evaluates to false and stopLight === 'yellow' evaluates to true, the code inside the first else if statement is executed. The rest of the conditions are not evaluated. If none of the conditions evaluated to true, then the code in the else statement would have executed.
+
+- [ ] Copy and paste the following code into your app.js file
+
+```
+let season = 'summer';
+
+if (season === 'spring') {
+  console.log('It\'s spring! The trees are budding!');
+} else {
+  console.log('Invalid season.');
+}
+
+```
+- [ ] create a program that keeps track of the way the environment changes with the seasons. Write a conditional statement to make this happen!
+
+In main.js there is already an if...else statement in place. Let's add an else if statement that checks if season is equal to 'winter'.
+
+Inside the code block of the else if statement, add a console.log() that prints the string 'It\'s winter! Everything is covered in snow.'.
+
+- [ ] Add another else if statement that checks if season is equal to 'fall'.
+
+Inside the code block of the else if statement you just created, add a console.log() that prints the string 'It\'s fall! Leaves are falling!'.
+
+- [ ] Add a final else if statement that checks if season is equal to 'summer'.
+
+Inside the code block of the else if statement you just created, add a console.log() that prints the string 'It\'s sunny and warm because it\'s summer!'.
+
+### The switch keyword
+
+else if statements are a great tool if we need to check multiple conditions. In programming, we often find ourselves needing to check multiple values and handling each of them differently. For example:
+
+```
+let groceryItem = 'papaya';
+
+if (groceryItem === 'tomato') {
+  console.log('Tomatoes are $0.49');
+} else if (groceryItem === 'papaya'){
+  console.log('Papayas are $1.29');
+} else {
+  console.log('Invalid item');
+}
+```
+In the code above, we have a series of conditions checking for a value that matches a groceryItem variable. Our code works fine, but imagine if we needed to check 100 different values! Having to write that many else if statements sounds like a pain!
+
+A switch statement provides an alternative syntax that is easier to read and write. A switch statement looks like this:
+
+```
+let groceryItem = 'papaya';
+
+switch (groceryItem) {
+  case 'tomato':
+    console.log('Tomatoes are $0.49');
+    break;
+  case 'lime':
+    console.log('Limes are $1.49');
+    break;
+  case 'papaya':
+    console.log('Papayas are $1.29');
+    break;
+  default:
+    console.log('Invalid item');
+    break;
+}
+```
+- The switch keyword initiates the statement and is followed by ( ... ), which contains the value that each case will compare. In the example, the value or expression of the switch statement is groceryItem.
+- Inside the block, { ... }, there are multiple cases. The case keyword checks if the expression matches the specified value that comes after it. The value following the first case is 'tomato'. If the value of groceryItem equalled 'tomato', that case's console.log() would run.
+- The value of groceryItem is 'papaya', so the third case runs— Papayas are $1.29 is logged to the console.
+- The break keyword tells the computer to exit the block and not execute any more code or check any other cases inside the code block. Note: Without the break keyword at the end of each case, the program would execute the code for all matching cases and the default code as well. This behavior is different from if/else conditional statements which execute only one block of code.
+- At the end of each switch statement, there is a default statement. If none of the cases are true, then the code in the default statement will run.
+
+- [ ] Declare athleteFinalPosition as shown below, 
+
+```
+let athleteFinalPosition = 'first place';
+```
+- [ ] write a switch statement to decide what medal to award an athlete.  athleteFinalPosition is already defined at the top of main.js. So start by writing a switch statement with athleteFinalPosition as its expression.
+
+- [ ] Inside the switch statement, add three cases:
+
+- The first case checks for the value 'first place'
+If the expression's value matches the value of the case then console.log() the string 'You get the gold medal!'
+- The second case checks for the value 'second place'
+If the expression's value matches the value of the case then console.log() the string 'You get the silver medal!'
+- The third case checks for the value 'third place'
+If the expression's value matches the value of the case then console.log() the string 'You get the bronze medal!'
+
+Remember to add a break after each console.log().
+
+- [ ] Now, add a default statement at the end of the switch that uses console.log() to print 'No medal awarded.'.
+
+If athleteFinalPosition does not equal any value of our cases, then the string 'No medal awarded.' is logged to the console.
+
+Remember to add the break keyword at the end of the default case.
+
+### Create a "Magic Eight Ball"
+
+You've learned a powerful tool in JavaScript: control flow! It's so powerful, in fact, that it can be used to tell someone's fortune.
+
+In this project we will build the Magic Eight Ball using control flow in JavaScript.
+
+The user will be able to input a question, then our program will output a random fortune.
+
+- [ ] In the first line of the program, define a variable called userName that is set to an empty string.
+
+If the user wants, he or she can enter his or her name in between the quotation marks.
+
+- [ ] Below this variable, create a ternary expression that decides what to do if the user enters a name or not. If the user enters a name — like 'Jane' — use string interpolation to log Hello, Jane! to the console. Otherwise, simply log Hello!.
+
+- [ ] Create a variable named userQuestion. The value of the variable should be a string that is the question the user wants to ask the Magic Eight Ball.
+
+- [ ] Create another variable, and name it randomNumber.  Set randomNumber to a random number between 0 and 7.  (HINT: use Math.random())
+
+- [ ] Create one more variable named eightBall, and set it equal to an empty string. We will save a value to this variable in the next steps, depending on the value of randomNumber.
+
+- [ ] We need to create a control flow that takes in the randomNumber we made in step 4, and then assigns eightBall to a reply that a Magic Eight Ball would return. Think about utilizing if/else or switch statements. Here are 8 Magic Eight Ball phrases that we'd like to save to the variable eightBall:
+
+- 'It is certain'
+- 'It is decidedly so'
+- 'Reply hazy try again'
+- 'Cannot predict now'
+- 'Do not count on it'
+- 'My sources say no'
+- 'Outlook not so good'
+- 'Signs point to yes'
+
+If the randomNumber is 0, then save an answer to the eightBall variable; if randomNumber is 1, then save the next answer, and so on. If you're feeling creative, make your own responses!
+
+- [ ] Write a console.log() to print the Magic Eight Ball's answer, the value of the eightBall variable.
+
+- [ ] Run your program a few times to see random results appear in the console!
+
+
 ### Get credit for this assignment
 
 - [ ] Once you have completed all of the above, have Ms. Pluska mark this assignment complete. 
