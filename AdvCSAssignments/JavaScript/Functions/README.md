@@ -450,7 +450,7 @@ Our code will break the game into four parts:
 3. Compare the two choices and determine a winner.
 4. Start the program and display the results.
 
-If you get stuck during this project, check out the project walkthrough video which can be found at the bottom of the page after the final step of the project.
+The steps for completing this assignment are below,
 
 - [ ] The user should be able to choose 'rock', 'paper', or 'scissors' when the game starts.
 
