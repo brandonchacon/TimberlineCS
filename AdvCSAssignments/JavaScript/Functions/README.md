@@ -112,10 +112,11 @@ greetWorld();
 
 The function call above executes the function body, or all of the statements between the curly braces in the function declaration below.
 
-````
+```
 function greetWorld() {
   console.log('Hello, World!');
 }
+
 ```
 
 We can call the same function as many times as needed.
