@@ -7,6 +7,7 @@ Locate the folder for each of the following assignments and complete the require
 - [ ] Conditionals
 - [ ] Functions
 - [ ] Functions Continued
+- [ ] Scope
 
 
 
