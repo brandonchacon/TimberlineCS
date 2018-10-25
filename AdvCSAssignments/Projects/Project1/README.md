@@ -29,7 +29,10 @@ The purpose of this project is to create a digital portfolio.  The portfolio you
 
 4. Create a brand
 
-- Design a logo that represents YOU.  You can do this on your own computer or check out an online paint editor - just "google" it, there are tons!
+- Design a logo that represents YOU.  There are tons of online tools to help you with this - just Google it!  To get started check out the following, 
+  - https://www.canva.com/
+  - https://vectr.com/
+  - https://www.befunky.com/create/designer/
 - Create a theme that reflects your personality.  Consider the colors, the fonts, the layout, etc. 
 - Pick a color palette.  Below are some great sites to help you, 
   - https://coolors.co
@@ -47,7 +50,7 @@ The purpose of this project is to create a digital portfolio.  The portfolio you
 
 8. Publish your site
 
-- Once you are done, launch your site (more on this later)
+- Once you are done, launch your site (More on this later)
 
 9. Make your site scalable (Experts only)
 
