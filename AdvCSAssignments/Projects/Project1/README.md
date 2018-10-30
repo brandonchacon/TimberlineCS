@@ -6,6 +6,7 @@ The purpose of this project is to create a digital portfolio.  The portfolio you
 
 1.  Before you embark on creating your digital portfolio, get inspired!
 
+- https://www.shopify.com/partners/blog/web-design-portfolio-inspiration
 - Navigate to https://www.csswinner.com/category/Portfolio/4  and check out these CSS digital portfolio winners
 
 2.  Read some tips on how to build a portfolio
