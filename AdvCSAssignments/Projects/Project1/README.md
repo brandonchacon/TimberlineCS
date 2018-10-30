@@ -4,9 +4,11 @@ The purpose of this project is to create a digital portfolio.  The portfolio you
 
 ## Your Tasks
 
-1.  Before you embark on creating your digital portfolio, get inspired!
+1.  Before you embark on creating your digital portfolio, check out the following sites and get inspired! 
 
-- Navigate to https://www.csswinner.com/category/Portfolio/4  and check out these CSS digital portfolio winners
+- https://creativemarket.com/blog/50-mindblowing-portfolio-sites-to-inspire-yours 
+- https://www.csswinner.com/category/Portfolio/4  
+- https://codeburst.io/10-awesome-web-developer-portfolios-d266b32e6154
 
 2.  Read some tips on how to build a portfolio
 
@@ -14,20 +16,27 @@ The purpose of this project is to create a digital portfolio.  The portfolio you
 - https://skillcrush.com/2015/03/12/impressive-tech-portfolio/
 - https://www.smashingmagazine.com/2013/06/workflow-design-develop-modern-portfolio-website/
 
-3. Brainstorm. Your portfolio should consist of the following sections (at a minimum).  Within each section, think of what you want to include.  For each section, you may not have much, or anything at all, but as you grow as a developer so too will the content.  
+3. Brainstorm. Your portfolio should consist of the following sections (at a minimum).  Within each section, think of what you want to include.  For each section, you may not have much, or anything at all, but as you grow as a developer and person so too will the content.  
 
 - Introduction to you
 - Hobbies/Interests/Extra-curricular
 - Skills
 - Education
 - Experience 
-- Projects
+- Projects (These do not need to be computer science related!)
 - Contact Information
+- References - What do people say about you?!
 
 4. Create a brand
 
-- Design a logo that represents YOU.  You can do this on your own computer or check out an online paint editor - just "google" it, there are tons!
-- Create a theme that reflects your personality.  Consider the colors, the fonts, the layout, etc.   
+- Design a logo that represents YOU.  There are tons of online tools to help you with this - just Google it!  To get started check out the following, 
+  - https://www.canva.com/
+  - https://vectr.com/
+  - https://www.befunky.com/create/designer/
+- Create a theme that reflects your personality.  Consider the colors, the fonts, the layout, etc. 
+- Pick a color palette.  Below are some great sites to help you, 
+  - https://coolors.co
+  - https://colorhunt.co
 
 6. Create a mockup
 
@@ -41,9 +50,9 @@ The purpose of this project is to create a digital portfolio.  The portfolio you
 
 8. Publish your site
 
-- Once you are done, launch your site on Azure
+- Once you are done, launch your site (More on this later)
 
-9. Make your site scalable.
+9. Make your site scalable (Experts only)
 
 - Your site should scale to different browsers other than your computer.  Your site should also scale to tablets, phones, etc. 
 
