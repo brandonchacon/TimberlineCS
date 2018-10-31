@@ -9,6 +9,7 @@ Locate the folder for each of the following assignments and complete the require
 - [ ] Functions Continued
 - [ ] Scope
 - [ ] Arrays
+- [ ] Loops
 
 
 
