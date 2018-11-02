@@ -54,7 +54,6 @@ Pick a color palette.  Below are some great sites to help you,
 - How will you break up your content?
 - How will you navigate your content?
 
-
 ### Build it!
 
 Now that you have all the elements, it is time to put them together to build a site that reflects YOU.  If you get stuck on how to style or position an element, refer to the course content up to this point or venture out to the Internet to find more help.
@@ -73,7 +72,40 @@ Test your site on as many browsers and devices as you can to ensure cross-compat
 
 ### Grade your site against the project requirements below.
 
-Coming soon!
+#### Content
+
+Your site has sections or pages for the following content (5 points each = 40)
+
+- Introduction to you
+- Hobbies/Interests/Extra-curricular
+- Skills
+- Education
+- Experience
+- Projects (These do not need to be computer science related!)
+- Contact Information
+- References - What do people say about you?!
+
+#### Brand
+
+Your site has a clear brand the defines YOU! (5 points each = 15)
+
+- Includes a logo
+- A clear color scheme
+- A clear theme throughout all pages and/or sections
+
+### Technical Qualities 
+
+Your site meets the following technical requirements (5 points each = 45)
+
+- Content is layed out in a logical manner.  Sections and/or pages are clearly labeled
+- Site is easy to navigate.  All pages and/or sections should include links to different locations within the site
+- CSS is appropriate linked to a style sheet which is stored in a seperate directory 
+- All elements are appropriately styled using the linked style sheet
+- All images are properly linked and stored in a separate directory
+- All links work properly
+- All HTML code is properly formatted and easy to read/understand
+- All CSS is properly formatted and easy to read/understand
+- Typed content is grammatically correct and is free of typos
 
 
  
