@@ -98,7 +98,7 @@ Your site has a clear brand the defines YOU! (5 points each = 15)
 Your site meets the following technical requirements (5 points each = 45)
 
 - Content is layed out in a logical manner.  Sections and/or pages are clearly labeled
-- Site is easy to navigate.  All pages and/or sections should include links to different locations within the site
+- Site is easy to navigate.  All pages and/or sections include links to different locations within the site
 - CSS is appropriate linked to a style sheet which is stored in a seperate directory 
 - All elements are appropriately styled using the linked style sheet
 - All images are properly linked and stored in a separate directory
