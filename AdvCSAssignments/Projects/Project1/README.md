@@ -62,6 +62,12 @@ Now that you have all the elements, it is time to put them together to build a s
 
 Once you are done, launch your site (More on this later)
 
+#### AP Principles Only
+
+- Create an account at http://awardspace.com (DO NOT use  your school email)
+- Register for a free domain
+- Upload all your website files to your main website directory
+
 ### Make your site scalable (Experts only)
 
 Your site should scale to different browsers other than your computer.  Your site should also scale to tablets, phones, etc.
@@ -107,5 +113,11 @@ Your site meets the following technical requirements (5 points each = 45)
 - All CSS is properly formatted and easy to read/understand
 - Typed content is grammatically correct and is free of typos
 
+### Submit your site for grading
 
+#### AP Principles Only
+
+- In your google shared drive project directory, create a new directory called project2
+- In the project2 directory you just created, create a new file called Project2LastName
+- Copy and paste the link to your live website in your Project2LastName file
  
