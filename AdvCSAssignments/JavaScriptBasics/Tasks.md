@@ -10,6 +10,7 @@ Locate the folder for each of the following assignments and complete the require
 - [ ] Scope
 - [ ] Arrays
 - [ ] Loops
+- [ ] Higher-Order Functions
 
 
 
