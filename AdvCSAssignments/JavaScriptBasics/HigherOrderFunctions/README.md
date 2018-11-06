@@ -21,7 +21,7 @@ In summary, using more abstraction in our code allows us to write more modular c
 
 This assignment will follow the same workflow as the last assignment.  You will begin by making a new assignment directory within which you will create an index.html file and a app.js file.  To view the results of your JavaScipt code, you will be using console.  If you forgot how to do this, refer to the first assignment "Introduction to JavaScript".
 
-- [ ] First create a new folder on your computer called Iterators.  Then, open the folder in VS Code.
+- [ ] First create a new folder on your computer called HigherOrderFunctions.  Then, open the folder in VS Code.
 
 - [ ] Add two new files to this folder, 
 
