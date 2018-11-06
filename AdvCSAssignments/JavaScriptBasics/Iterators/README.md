@@ -360,7 +360,7 @@ The documentation for each method contains several sections:
 
 In the instructions below, there are some errors in the code. Use the documentation for a given method to determine the error or fill in a blank to make the code run correctly.
 
-- Copy and paste the code below into your app.js file, 
+- [ ] Copy and paste the code below into your app.js file, 
 
 ```
 const words = ['unique', 'uncanny', 'pique', 'oxymoron', 'guise'];
