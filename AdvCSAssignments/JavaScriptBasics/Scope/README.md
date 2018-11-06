@@ -246,7 +246,7 @@ As a seasoned athlete, one of your favorite activities is running marathons. You
 
 Since you also code, Training Days has asked you to help them solve a problem: The program currently uses the wrong scope for its variables. They know this can be troublesome as their service evolves. In this project you will make Training Days more maintainable and less error-prone by fixing variable scopes.
 
-- [ ] Let's begin by downloading and running [trainingDays.js](https://github.com/hpluska/TimberlineCS/blob/master/AdvCSAssignments/JavaScript/Scope/trainingDays.js) file. In the console we can see that the program is broken!
+- [ ] Let's begin by downloading and running [trainingDays.js](https://github.com/hpluska/TimberlineCS/blob/master/AdvCSAssignments/JavaScriptBasics/Scope/trainingDays.js) file. In the console we can see that the program is broken!
 
 Ideally, the getRandEvent() function selects an event at random. The getTrainingDays() function returns the number of days to train based on the event selected. The logEvent() and logTime() functions print the athlete name, event, and number of days to the console.
 
