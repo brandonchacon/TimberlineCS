@@ -100,7 +100,7 @@ Your site has a clear brand the defines YOU! (5 points each = 15)
 - A clear color scheme
 - A clear theme throughout all pages and/or sections
 
-### Technical Qualities 
+#### Technical Qualities 
 
 Your site meets the following technical requirements (5 points each = 45)
 
@@ -121,6 +121,10 @@ Your site meets the following technical requirements (5 points each = 45)
 - In your google shared drive project directory, create a new directory called project2
 - In the project2 directory you just created, create a new file called Project2LastName
 - Copy and paste the link to your live website in your Project2LastName file
+
+#### Advanced Topics 
+
+- Publish your site to Azure
 
 ### Tips and Tricks!
 

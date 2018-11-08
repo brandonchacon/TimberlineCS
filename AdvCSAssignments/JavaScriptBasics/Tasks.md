@@ -12,6 +12,7 @@ Locate the folder for each of the following assignments and complete the require
 - [ ] Loops
 - [ ] Higher-Order Functions
 - [ ] Iterators
+- [ ] Objects
 
 
 
