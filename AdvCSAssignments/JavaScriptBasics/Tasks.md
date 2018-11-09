@@ -2,12 +2,12 @@
 
 Locate the folder for each of the following assignments and complete the requirements outlined in the README
 
-- [ ] Intro to Javascript
-- [ ] Variables
-- [ ] Conditionals
-- [ ] Functions
-- [ ] Functions Continued
-- [ ] Scope
+- [x] Intro to Javascript
+- [x] Variables
+- [x] Conditionals
+- [x] Functions
+- [x] Functions Continued
+- [x] Scope
 - [ ] Arrays
 - [ ] Loops
 - [ ] Higher-Order Functions
