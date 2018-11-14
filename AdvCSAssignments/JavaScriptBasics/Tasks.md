@@ -9,7 +9,7 @@ Locate the folder for each of the following assignments and complete the require
 - [x] Functions Continued
 - [x] Scope
 - [x] Arrays
-- [ ] Loops
+- [x] Loops
 - [ ] Higher-Order Functions
 - [ ] Iterators
 
