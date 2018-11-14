@@ -39,6 +39,7 @@ Design a logo that represents YOU.  There are tons of online tools to help you w
 - [https://www.canva.com/](https://vectr.com/)
 - [https://vectr.com/](https://vectr.com/)
 - [https://www.befunky.com/create/designer/](https://www.befunky.com/create/designer/)
+- [https://logomaker.com](http://logomaker.com)
 
 ### Create a theme that reflects your personality.  
 
@@ -99,7 +100,7 @@ Your site has a clear brand the defines YOU! (5 points each = 15)
 - A clear color scheme
 - A clear theme throughout all pages and/or sections
 
-### Technical Qualities 
+#### Technical Qualities 
 
 Your site meets the following technical requirements (5 points each = 45)
 
@@ -120,4 +121,16 @@ Your site meets the following technical requirements (5 points each = 45)
 - In your google shared drive project directory, create a new directory called project2
 - In the project2 directory you just created, create a new file called Project2LastName
 - Copy and paste the link to your live website in your Project2LastName file
+
+#### Advanced Topics 
+
+- Publish your site to Azure
+
+### Tips and Tricks!
+
+Here is a link to a site that includes smooth scrolling between sections.  Feel free to incorporate all or parts of this code in your own site. 
+
+- http://pluska2.dx.am
+
+
  
