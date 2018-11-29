@@ -7,7 +7,7 @@ canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
 
 /**
- * Constructor for a single snow flake
+ * Constructor for a single snow flake 
  */
 
 function snowFlake(x,y,r) {
@@ -37,7 +37,9 @@ function snow(){
 }
 
 /**
- * TODO:  Make the snow appear randomly appear on the screen
+ * TODO:  Make the snow appear randomly appear on the screen and move 
+ * in a verticle direction
+ * add an additional variable to account for wind
  */
 
 function drawSnow(){
