@@ -1,3 +1,12 @@
+/**
+*Provide a description of this file here
+*
+*/
+
+/**
+*@author pluska
+*@author [put your name here]
+*/
 
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
@@ -25,8 +34,9 @@ function snowFlake(x,y,r) {
   
 }
 /** 
- * TODO: Complete the below to make lots of snow and 
- * populate the snowArray
+ * TODO: Complete the function below to make lots of snow.   
+ * Create each snowflake using the snowFlake constructor and 
+ * populate the snowArray with your snowflakes
  * Each snow flake must be of random sizes and populate
  * the screen randomly in the y and x directions
  * Feel free to add a parameter to specify the amount of snow
@@ -38,8 +48,7 @@ function snow(){
 
 /**
  * TODO:  Make the snow appear randomly appear on the screen and move 
- * in a verticle direction
- * add an additional variable to account for wind
+ * in a verticle direction add an additional variable to account for wind
  */
 
 function drawSnow(){
