@@ -11,7 +11,7 @@ Locate the folder for each of the following assignments and complete the require
 - [x] Arrays
 - [x] Loops
 - [x] Higher-Order Functions
-- [ ] Iterators
+- [x] Iterators
 - [ ] Objects
 
 
