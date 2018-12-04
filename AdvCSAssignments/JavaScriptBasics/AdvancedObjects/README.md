@@ -257,270 +257,330 @@ Make sure you return the string and not logging it to the console.
 
 Notice that the method will return a formatted response rather than just accessing a property!
 
-### Methods
+### Setters
 
-When the data stored on an object is a function we call that a method. A property is what an object has, while a method is what an object does.
-
-Do object methods seem familiar? That’s because you've been using them all along! For example console is a global javascript object and .log() is a method on that object. Math is also a global javascript object and .floor() is a method on it.
-
-We can include methods in our object literals by creating ordinary, comma-separated key-value pairs. The key serves as our method's name, while the value is an anonymous function expression.
+Along with getter methods, we can also create setter methods which reassign values of existing properties within an object. Let's see an example of a setter method:
 
 ```
-const alienShip = {
-  invade: function () { 
-    console.log('Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.')
-  }
-};
-```
-
-With the new method syntax introduced in ES6 we can omit the colon and the function keyword.
-
-```
-const alienShip = {
-  invade () { 
-    console.log('Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.')
-  }
-};
-```
-
-Object methods are invoked by appending the object's name with the dot operator followed by the method name and parentheses:
-
-```
-alienShip.invade(); // Prints 'Hello! We have come to dominate your planet. Instead of Earth, it shall be called New Xaculon.'
-```
-
-- [ ] Copy and paste the code below into your app.js file
-
-```
-let retreatMessage = 'We no longer wish to conquer your planet. It is full of dogs, which we do not care for.';
-```
-
-- [ ] Below the retreatMessage variable, create an alienShip object. It should contain a method .retreat() which will console.log() the retreatMessage.
-
-- [ ] Add another method to your object literal. This method, .takeOff(), should console.log() the string 'Spim... Borp... Glix... Blastoff!'.
-
-- [ ] Invoke your two methods: first .retreat() then .takeOff().
-
-### Nested Objects
-
-In application code, objects are often nested— an object might have another object as a property which in turn could have a property that's an array of even more objects!
-
-In our spaceship object, we want a crew object. This will contain all the crew members who do important work on the craft. Each of those crew members are objects themselves. They have properties like name, and degree, and they each have unique methods based on their roles. We can also nest other objects in the spaceship such as a telescope or nest details about the spaceship's computers inside a parent nanoelectronics object.
-
-```
-const spaceship = {
-     telescope: {
-        yearBuilt: 2018,
-        model: '91031-XLT',
-        focalLength: 2032 
-     },
-    crew: {
-        captain: { 
-            name: 'Sandra', 
-            degree: 'Computer Engineering', 
-            encourageTeam() { console.log('We got this!') } 
-         }
-    },
-    engine: {
-        model: 'Nimbus2000'
-     },
-     nanoelectronics: {
-         computer: {
-            terabytes: 100,
-            monitors: 'HD'
-         },
-        'back-up': {
-           battery: 'Lithium',
-           terabytes: 50
-         }
+const person = {
+  _age: 37,
+  set age(newAge){
+    if (typeof newAge === 'number'){
+      this._age = newAge;
+    } else {
+      console.log('You must assign a number to age');
     }
+  }
 };
 ```
-We can chain operators to access nested properties. We'll have to pay attention to which operator makes sense to use in each layer. It can be helpful to pretend you are the computer and evaluate each expression from left to right so that each operation starts to feel a little more manageable.
+
+Notice that in the example above:
+
+- We can perform a check for what value is being assigned to this._age.
+- When we use the setter method, only values that are numbers will reassign this._age
+- There are different outputs depending on what values are used to reassign this._age.
+
+Then to use the setter method:
 
 ```
-spaceship.nanoelectronics['back-up'].battery; // Returns 'Lithium'
+person.age = 40;
+console.log(person._age); // Logs: 40
+person.age = '40'; // Logs: You must assign a number to age
 ```
 
-In the preceding code:
+Setter methods like age do not need to be called with a set of parentheses. Syntactically, it looks like we're reassigning the value of a property.
 
-- First the computer evaluates spaceship.nanoelectronics, which results in an object containing the back-up and computer objects.
-- We accessed the back-up object by appending ['back-up'].
-- The back-up object has a battery property, accessed with .battery which returned the value stored there: 'Lithium'
+Like getter methods, there are similar advantages to using setter methods that include checking input, performing actions on properties, and displaying a clear intention for how the object is supposed to be used. Nonetheless, even with a setter method, it is still possible to directly reassign properties. For example, in the example above, we can still set ._age directly:
+
+```
+person._age = 'forty-five'
+console.log(person._age); // Prints forty-five
+```
+- [ ] Copy and paste the code below into your app.js file, 
+
+```
+const robot = {
+  _model: '1E78V2',
+  _energyLevel: 100,
+  _numOfSensors: 15,
+  get numOfSensors(){
+    if(typeof this._numOfSensors === 'number'){
+      return this._numOfSensors;
+    } else {
+      return 'Sensors are currently down.'
+    }
+  },
+  
+};
+```
+
+- [ ] Currently, in robot there is a getter method for numOfSensors but no setter method! What if we need to add or remove some sensors? Let's fix that problem.
+
+Add a setter method named numOfSensors using the set keyword. Provide a parameter of num. Leave the function body empty for now.
+
+- [ ] There are a couple of things we should do in the setter method:
+
+- Add a check to see if num is a number using the typeof operator.
+- num should also be greater than or equal to 0.
+- If both conditions are met, reassign this._numOfSensors to num.
+
+- [ ] Now add an else that logs 'Pass in a number that is greater than or equal to 0' to the console.
+
+- [ ] Use the numOfSensors setter method on robot to assign _numOfSensors to 100.
+
+- [ ] To check that the setter method worked, console.log() robot.numOfSensors.
+
+### Factory Functions
+
+So far we've been creating objects individually, but there are times where we want to create many instances of an object quickly. Here's where factory functions come in. A real world factory manufactures multiple copies of an item quickly and on a massive scale. A factory function is a function that returns an object and can be reused to make multiple object instances. Factory functions can also have parameters allowing us to customize the object that gets returned.
+
+Let's say we wanted to create an object to represent monsters in JavaScript. There are many different types of monsters and we could go about making each monster individually but we can also use a factory function to make our lives easier. To achieve this diabolical plan of creating multiple monsters objects, we can use a factory function that has parameters:
+
+```
+const monsterFactory = (name, age, energySource, catchPhrase) => {
+  return { 
+    name: name,
+    age: age, 
+    energySource: energySource,
+    scare() {
+      console.log(catchPhrase);
+    } 
+  }
+};
+```
+
+In the monsterFactory function above, it has four parameters and returns an object that has the properties: name, age, energySource, and scare(). To make an object that represents a specific monster like a ghost, we can call monsterFactory with the necessary arguments and assign the return value to a variable:
+
+```
+const ghost = monsterFactory('Ghouly', 251, 'ectoplasm', 'BOO!');
+ghost.scare(); // 'BOO!'
+
+```
+
+Now we have a ghost object as a result of calling monsterFactory() with the needed arguments. With monsterFactory in place, we don't have to create an object literal every time we need a new monster. Instead, we can invoke the monsterFactory function with the necessary arguments to take over the world make a monster for us!
+
+- [ ] Instead of making individual robots like we've been doing, let's make a factory function to make robots as we please!
+
+Create a factory function named robotFactory that has two parameters model and mobile. Make the function return an object. In the object, add a key of model with the value of the model parameter. Add another property that has a key of mobile with a value of the mobile parameter.
+
+Then add a method named beep without a parameter that will log 'Beep Boop' to the console.
+
+- [ ] Use your factory function by declaring a const variable named tinCan. Assign to tinCan the value of calling robotFactory with the first argument of 'P-500' and the second argument of true.
+
+- [ ] Let's now check what tinCan can do! Call .beep() on tinCan.
+
+You should see 'Beep Boop' printed to the console which means the factory function produced a robot object! Play around with tinCan to check the other properties!
+
+### Property Value Shorthand
+
+ES6 introduced some new shortcuts for assigning properties to variables known as destructuring.
+
+In the previous exercise, we created a factory function that helped us create objects. We had to assign each property a key and value even though the key name was the same as the parameter name we assigned to it. To remind ourselves, here's a truncated version of the factory function:
+
+```
+const monsterFactory = (name, age) => {
+  return { 
+    name: name,
+    age: age
+  }
+};
+```
+
+Imagine if we had to include more properties, that process would quickly become tedious! But we can use a destructuring technique, called property value shorthand, to save ourselves some keystrokes. The example below works exactly like the example above:
+
+```
+const monsterFactory = (name, age) => {
+  return { 
+    name,
+    age 
+  }
+};
+```
+
+Notice that we don't have to repeat ourselves for property assignments
 
 - [ ] Copy and paste the code below into your app.js file, 
 
 ```
-let spaceship = {
-  passengers: null,
-  telescope: {
-    yearBuilt: 2018,
-    model: "91031-XLT",
-    focalLength: 2032 
-  },
-  crew: {
-    captain: { 
-      name: 'Sandra', 
-      degree: 'Computer Engineering', 
-      encourageTeam() { console.log('We got this!') },
-     'favorite foods': ['cookies', 'cakes', 'candy', 'spinach'] }
-  },
-  engine: {
-    model: "Nimbus2000"
-  },
-  nanoelectronics: {
-    computer: {
-      terabytes: 100,
-      monitors: "HD"
+function robotFactory(model, mobile){
+  return {
+    model: model,
+    mobile: mobile,
+    beep() {
+      console.log('Beep Boop');
+    }
+  }
+}
+
+// To check that the property value shorthand technique worked:
+const newRobot = robotFactory('P-501', false)
+console.log(newRobot.model)
+console.log(newRobot.mobile)
+```
+
+- [ ] Use the property value shorthand and refactor the factory function
+
+### Destructured Assignment
+
+We often want to extract key-value pairs from objects and save them as properties. Take for example the following object:
+
+```
+const vampire = {
+  name: 'Dracula',
+  residence: 'Transylvania',
+  preferences: {
+    day: 'stay inside',
+    night: 'satisfy appetite'
+  }
+};
+```
+
+If we wanted to extract the residence property as a variable, we could using the following code:
+
+```
+const residence = vampire.residence; 
+console.log(residence); // Prints 'Transylvania'
+```
+
+However, we can also take advantage of a destructuring technique called destructured assignment to save ourselves some keystrokes. In destructured assignment we create a variable with the name of an object's key that is wrapped in curly braces { } and assign to it the object. Take a look at the example below:
+
+```
+const { residence } = vampire; 
+console.log(residence); // Prints 'Transylvania'
+```
+Look back at the vampire object's properties in the first code example. Then, in the example above, we declare a new variable residence that extracts the value of the residence property of vampire. When we log the value of residence to the console, 'Transylvania' is printed.
+
+We can even use destructured assignment to grab nested properties of an object:
+
+```
+const { day } = vampire.preferences; 
+console.log(day); // Prints 'stay inside'
+```
+- [ ] Copy and paste the code below into your app.js file, 
+
+```
+const robot = {
+  model: '1E78V2',
+  energyLevel: 100,
+  functionality: {
+    beep() {
+      console.log('Beep Boop');
     },
-    backup: {
-      battery: "Lithium",
-      terabytes: 50
-    }
+    fireLaser() {
+      console.log('Pew Pew');
+    },
   }
-}; 
-
-```
-- [ ] Create a variable capFave and assign the captain's favorite food (the element in the 0th index of her 'favorite foods' array) to it. Make sure to use bracket and dot notation to get the value of the food through nested access (don't just copy the value into the variable!)
-
-- [ ] Right now the passengers property has a value of null. Instead, assign as its value an array of objects. These objects should represent the spaceship's passengers as individual objects. Make at least one passenger object in the array that has at least one key-value pair on it.
-
-- [ ] Create a variable firstPassenger and assign the first passenger as its value (the element in the 0th index of the spaceship.passengers array you just made). Make sure to use bracket and dot notation to get the passenger object through nested access (don't just copy the object into the variable!)
-
-### Pass by Reference
-
-Objects are passed by reference. This means when we pass a variable assigned to an object into a function as an argument, the computer interprets the parameter name as pointing to the space in memory holding that object. As a result, functions which change object properties actually mutate the object permanently (even when the object is assigned to a const variable).
-
-```
-const spaceship = {
-  homePlanet : 'Earth',
-  color : 'silver'
-};
-
-let paintIt = obj => {
-  obj.color = 'glorious gold'
-};
-
-paintIt(spaceship);
-
-spaceship.color // Returns 'glorious gold'
-```
-Our function paintIt() permanently changed the color of our spaceship object. However, reassignment of the spaceship variable wouldn't work in the same way:
-
-```
-let spaceship = {
-  homePlanet : 'Earth',
-  color : 'red'
-};
-let tryReassignment = obj => {
-  obj = {
-    identified : false, 
-    'transport type' : 'flying'
-  }
-  console.log(obj) // Prints {'identified': false, 'transport type': 'flying'}
-
-};
-tryReassignment(spaceship) // The attempt at reassignment does not work.
-spaceship // Still returns {homePlanet : 'Earth', color : 'red'};
-
-spaceship = {
-  identified : false, 
-  'transport type': 'flying'
-}; // Regular reassignment still works.
-```
-Let's look at what happened in the code example:
-
-- We declared this spaceship object with let. This allowed us to reassign it to a new object with identified and 'transport type' properties with no problems.
-- When we tried the same thing using a function designed to reassign the object passed into it, the reassignment didn't stick (even though calling console.log() on the object produced the expected result).
-- When we passed spaceship into that function, obj became a reference to the memory location of the spaceship object, but not to the spaceship variable. This is because the obj parameter of the tryReassignment() function is a variable in its own right. The body of tryReassignment() has no knowledge of the spaceship variable at all!
-- When we did the reassignment in the body of tryReassignment(), the obj variable came to refer to the memory location of the object {'identified' : false, 'transport type' : 'flying'}, while the spaceship variable was completely unchanged from its earlier value.
-
-- [ ] Copy and paste the code below into your app.js file. 
-
-```
-let spaceship = {
-  'Fuel Type' : 'Turbo Fuel',
-  homePlanet : 'Earth'
-};
-```
-- [ ] Write a function greenEnergy() that has an object as a parameter and sets that object's 'Fuel Type' property to 'avocado oil'.
-
-- [ ] Write a function remotelyDisable() that has an object as a parameter and sets (or reassigns) that object's disabled property to true.
-
-- [ ] Call your two functions with the spaceship object in the code editor, then console.log() the spaceship object to confirm those properties were changed/added.
-
-### Looping Through Objects
-
-Loops are programming tools that repeat a block of code until a condition is met. We learned how to iterate through arrays using their numerical indexing, but the key-value pairs in objects aren't ordered! [JavaScript has given us alternative solution for iterating through objects with the for...in syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in) .
-
-for...in will execute a given block of code for each property in an object.
-
-```
-let spaceship = {
-    crew: {
-    captain: { 
-        name: 'Lily', 
-        degree: 'Computer Engineering', 
-        cheerTeam() { console.log('You got this!') } 
-        },
-    'chief officer': { 
-        name: 'Dan', 
-        degree: 'Aerospace Engineering', 
-        agree() { console.log('I agree, captain!') } 
-        },
-    medic: { 
-        name: 'Clementine', 
-        degree: 'Physics', 
-        announce() { console.log(`Jets on!`) } },
-    translator: {
-        name: 'Shauna', 
-        degree: 'Conservation Science', 
-        powerFuel() { console.log('The tank is full!') } 
-        }
-    }
-}; 
-// for...in
-for (let crewMember in spaceship.crew) {
-  console.log(`${crewMember}: ${spaceship.crew[crewMember].name}`)
 };
 
 ```
 
-Our for...in will iterate through each element of the spaceship.crew object. In each iteration, the variable crewMember is set to one of spaceship.crew's keys, enabling us to log a list of crew members' role and name.
+- [ ] Use destructured assignment to create a const variable named functionality that extracts the functionality property of robot.
+
+If you need a reminder on how to use destructured assignment, review the example in the narrative or check the hint.
+
+- [ ] Since functionality is referencing robot.functionality we can call the methods available to robot.functionality simply through functionality.
+
+Take advantage of this shortcut and call the .beep() method on functionality.
+
+### Built-in Object Methods
+
+In the previous exercises we've been creating instances of objects that have their own methods. But, we can also take advantage of built-in methods for Objects!
+
+For example, we have access to object instance methods like: .hasOwnProperty(), .valueOf(), and many more! Practice your documentation reading skills and check out: [MDN's object instance documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object#Methods).
+
+There are also useful Object class methods such as Object.assign(), Object.entries(), and Object.keys() just to name a few. For a comprehensive list, browse: [MDN's object instance documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object#Methods_of_the_Object_constructor).
+
+Let's get acquainted with some of these methods and their documentation.
+
+Note: You will see errors as you work through this exercise, but by the end the errors will be fixed!
 
 - [ ] Copy and paste the code below into your app.js file, 
 
 ```
-let spaceship = {
-    crew: {
-    captain: { 
-        name: 'Lily', 
-        degree: 'Computer Engineering', 
-        cheerTeam() { console.log('You got this!') } 
-        },
-    'chief officer': { 
-        name: 'Dan', 
-        degree: 'Aerospace Engineering', 
-        agree() { console.log('I agree, captain!') } 
-        },
-    medic: { 
-        name: 'Clementine', 
-        degree: 'Physics', 
-        announce() { console.log(`Jets on!`) } },
-    translator: {
-        name: 'Shauna', 
-        degree: 'Conservation Science', 
-        powerFuel() { console.log('The tank is full!') } 
-        }
-    }
-}; 
+const robot = {
+	model: 'SAL-1000',
+  mobile: true,
+  sentient: false,
+  armor: 'Steel-plated',
+  energyLevel: 75
+};
 
-// Write your code below
+// What is missing in the following method call?
+const robotKeys = Object.keys();
+
+console.log(robotKeys);
+
+// Declare robotEntries below this line:
+
+
+console.log(robotEntries);
+
+// Declare newRobot below this line:
+
+
+console.log(newRobot);
 ```
 
-- [ ] Using for...in, iterate through the spaceship.crew object in the code editor and console.log() a list of crew roles and names in the following format: '[crew member's role]: [crew member's name]', e.g.,'chief officer: Dan'.
+- [ ] In the code above there is an object, robot. We'd like to grab the property names, otherwise known as keys, and save the keys in an array which is assigned to robotKeys. However, there's something missing in the method call.
 
-- [ ] Using for...in, iterate through the spaceship.crew object in the code editor and console.log() a list of crew names and degrees in the following format: '[crew member's name]: [crew member's degree]', i.e.,'Lily: Computer Engineering'.
+Find out what we have to include by reading [MDN's Object.keys() documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys).
+
+- [ ] Object.entries() will also return an array, but the array will contain more arrays that have both the key and value of the properties in an object.
+
+Declare a const variable named robotEntries and assign to it the entries of robot by calling Object.entries().
+
+To find how to use Object.entries(), read the [documentation at MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries).
+
+- Now what if we want another object that has the properties of robot but with a few additional properties. Object.assign() sounds like a great method to use, but like the previous examples we should check [Object.assign() documentation at MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign).
+
+Declare a const variable named newRobot. newRobot will be a new object that has all the properties of robot and the properties in the following object: {laserBlaster: true, voiceRecognition: true}. Make sure that you are not changing the robot object!
+
+### Meal Maker
+
+As a frequent diner, you love trying out new restaurants and experimenting with different foods. However, having to figure out what you want to order can be a time-consuming ordeal if the menu is big, and you want an easier way to be able to figure out what you are going to eat.
+
+In this project, you'll use JavaScript to randomly create a three-course meal based on what is available on a menu. We'll keep running it until we're satisfied with the generated meal!
+
+- [ ] Start by creating an empty menu object.
+
+- [ ] Add a _courses property to your menu object and set its value to an empty object. This property will ultimately contain a mapping between each course and the dishes available to order in that course.
+
+- [ ] Create three properties inside the _courses object called appetizers, mains, and desserts. Each one of these should initialize to an empty array.
+
+- [ ] Create getter and setter methods for the appetizers, mains, and desserts properties.
+
+- [ ] Inside your menu object, create an empty getter method for the _courses property.
+
+- [ ] Inside the courses getter method, return an object that contains key/value pairs for appetizers, mains, and desserts.
+
+- [ ] Inside the menu object, we are going to create a method called .addDishToCourse() which will be used to add a new dish to the specified course on the menu.
+
+The method should take in three parameters: the courseName, the dishName , and the dishPrice.
+
+- [ ] The .addDishToCourse() method should create an object called dish which has a name and price which it gets from the parameters.
+
+The method should then push this dish object into the appropriate array in your menu's _courses object based on what courseName was passed in.
+
+- [ ] Now, we're going to need another function which will allow us to get a random dish from a course on the menu, which will be necessary for generating a random meal.
+
+Create a method inside the menu object called .getRandomDishFromCourse(). It will take in one parameter which is the courseName.
+
+- [ ] There are a few steps in getting the .getRandomDishFromCourse() to work.
+
+1. Retrieve the array of the given course's dishes from the menu's _courses object and store in a variable called dishes.
+2. Generate a random index by multiplying Math.random() by the length of the dishes array (This will guarantee that the random number will be between 0 and the length of the array)
+3. Round that generated number to a whole number by using Math.floor() on the result.
+4. Return the dish located at that index in dishes.
+
+- [ ] Now that we have a way to get a random dish from a course, we can create a .generateRandomMeal() function which will automatically generate a three-course meal for us. The function doesn't need to take any parameters.
+
+1. The function should create an appetizer variable which should be the result of calling the .getRandomDishFromCourse() method when we pass in an appetizers string to it.
+2. Create a main variable and dessert variable the same way you created the appetizer variable, but make sure to pass in the right course type.
+3. Calculates the total price and returns a string that contains the name of each of the dishes and the total price of the meal, formatted as you like.
+
+- [ ] Now that we've finished our menu, object, let's use it to create a menu by adding some appetizers, mains, and desserts with the .addDishToCourse() function. Add at least 3 dishes to each course (or more if you like!).
+
+- [ ] Once your menu has items inside it, generate a meal by using the .generateRandomMeal() function on your menu, and save it to a variable called meal. Lastly, print out your meal variable to see what meal was generated for you.
 
 ### Get credit for this assignment
 

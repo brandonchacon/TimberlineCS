@@ -13,6 +13,7 @@ Locate the folder for each of the following assignments and complete the require
 - [x] Higher-Order Functions
 - [x] Iterators
 - [ ] Objects
+- [ ] Advanced Objects
 
 
 
