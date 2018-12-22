@@ -41,7 +41,7 @@ spot. Each parking spot instance will keep track of the following data.
 - [ ] Begin a project in NetBeans called FindParking
 - [ ] Locate the ParkingSpot class in the "stubs" folder of this project folder [https://github.com/hpluska/TimberlineCS/blob/master/APCSA/Project2/Stubs/ParkingSpot.java](https://github.com/hpluska/TimberlineCS/blob/master/APCSA/Project2/Stubs/ParkingSpot.java)
 - [ ] Save the ParkingSpot class and place it in your NetBeans project folder
-- [ ] Write class called FindParking. It is the driver class, meaning, it will contain the main method.
+- [ ] Write the class called FindParking. It is the driver class, meaning, it will contain the main method.
 
 In this class you must, 
 
