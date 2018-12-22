@@ -20,11 +20,11 @@ and determines which parking spot is the closest to your current location.
 You are given a class named ParkingSpot that keeps track of the details about a parking
 spot. Each parking spot instance will keep track of the following data.
 
-- Name of the spot.
-	-The spot name must be specified when the spot is created (for example, "5th and main")
-- Coordinates in a 2-dimensional city grid.
---The (x, y) coordinates must be specified when the spot is created.
-– The charge per 10 minutes interval.
---The default charge is 25 cents per 10 minute interval. As with all parking meters,
-payment must be in whole intervals.
+* Name of the spot.
+	* The spot name must be specified when the spot is created (for example, "5th and main")
+* Coordinates in a 2-dimensional city grid.
+	* The (x, y) coordinates must be specified when the spot is created.
+* The charge per 10 minutes interval.
+	* The default charge is 25 cents per 10 minute interval. 
+	* As with all parking meters, payment must be in whole intervals.
 
