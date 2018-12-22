@@ -52,12 +52,12 @@ Scanner in = new Scanner(System.in);
 ```
 
 - [ ] Your scanner should prompt the user for a String value for the amount of parking time needed in the following format, hh:mm
-- [ ] Your scanner should prompt the user for a String value for the name of the cars location (for example, "Timberline HS")
+- [ ] Your scanner should prompt the user for a String value for the name of the car's location (for example, "Timberline HS")
 - [ ] Once you have collected the necessary information from the user,  your program should generate random x and y starting coordinates for the car.  These values will range from 0 to 100 (100 not inclusive). 
 - [ ] Create three ParkingSpot objects with random x and y location coordinates ranging from 0 to 100 (100 not inclusive).  You will also need to provide names for the parking spots (for example, "1st and main").  See the constructor
 in the ParkingSpot class for expected parameters. 
 - [ ] Change the default parking cost for two of the parking spots using the setCostPerInterval() method in the ParkingSpot class.  
-	* For example if you created a parking spot called "spot" one, you can set the interval using spot1.setCostPerInterval(40);
+	* For example if you created a parking spot called "spot1", you can set the interval using spot1.setCostPerInterval(40);
 - [ ] Calculate how much it costs to park at each of the spots you created.  
 	* You can get the cost to park per 10 minutes using the getCostPerInterval() method (for example, spot1.getCostPerInterval());  
 	* You will need to convert the time in hh:mm to total time in minutes 
