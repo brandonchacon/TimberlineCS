@@ -42,11 +42,11 @@ You will write a class called FindParking. It is the driver class, meaning, it w
 
 In this class you will
 
-- [] Create a random starting coordinate (your car’s position) 
-- [] Create four ParkingSpot objects with random location coordinates. 
-- [] After your car’s position is determined and the spots are created, you will calculate how much it would cost to park in each 
+- [ ] Create a random starting coordinate (your car’s position) 
+- [ ] Create four ParkingSpot objects with random location coordinates. 
+- [ ] After your car’s position is determined and the spots are created, you will calculate how much it would cost to park in each 
 spot for a given number of time.
-- [] You will use conditional statements to determine which spot is closest to you.
+- [ ] You will use conditional statements to determine which spot is closest to you.
 
 Your FindParking code should not duplicate any data or functionality that belongs
 to the ParkingSpot objects. Make sure that you are accessing data using the
