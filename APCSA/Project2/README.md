@@ -36,23 +36,50 @@ spot. Each parking spot instance will keep track of the following data.
 	* public int getLocationY()
 	* public String toString()
 	
-# FindParking (the driver class)
+# Your Tasks
 
 You will write a class called FindParking. It is the driver class, meaning, it will contain the main method.
 
 In this class you will
 
-- [ ] Create a random starting coordinate (your car’s position) 
-- [ ] Create four ParkingSpot objects with random location coordinates. 
-- [ ] After your car’s position is determined and the spots are created, you will calculate how much it would cost to park in each 
-spot for a given number of time.
-- [ ] You will use conditional statements to determine which spot is closest to you.
+- [ ] Create a Scanner using the standard input as follows, 
 
-Your FindParking code should not duplicate any data or functionality that belongs
-to the ParkingSpot objects. Make sure that you are accessing data using the
-ParkingSpot methods.
+```
+Scanner in = new Scanner(System.in);
+```
 
-Do NOT use a loop or arrays to generate your ParkingSpots. We will discuss how
-to do this later, but please don’t over complicate things now. If you want to do
-something extra, see the extra credit section below.
+- [ ] Your scanner should prompt the user for a String value for the amount of parking time needed in the following format, hh:mm
+- [ ] Your scanner should prompt the user for a String value for the name of the cars location (for example, "Timberline HS")
+- [ ] Once you have collected the necessary information from the user,  your program should generate random x and y starting coordinates for the car.  These values will range from 0 to 100 (100 not inclusive). 
+- [ ] Create three ParkingSpot objects with random x and y location coordinates ranging from 0 to 100 (100 not inclusive).  You will also need to provide names for the parking spots (for example, "1st and main").  See the constructor
+in the ParkingSpot class for expected parameters. 
+- [ ] Change the default parking cost for two of the parking spots using the setCostPerInterval() method in the ParkingSpot class.  
+	* For example if you created a parking spot called "spot" one, you can set the interval using spot1.setCostPerInterval(40);
+- [ ] Calculate how much it costs to park at each of the spots you created.  
+	* You can get the cost to park per 10 minutes using the getCostPerInterval() method (for example, spot1.getCostPerInterval());  
+	* You will need to convert the time in hh:mm to total time in minutes 
+	* You will then need to figure out the total cost to park. (parking meters do not round down!)
+	* The total cost will need to be converted to a String so it prints as expected (for example, $1.50);
+	* Once you figure out the total cost you need to set the total cost (for example, spot1.setTotalCost("$1.50"))
+		* Note: there are other ways to do the above using the NumberFormat class, but just use Strings here. 
+- [ ] Calculate the distance from the driver for each spot using Manhattan geometry: 
+	* for two points (x1, y1) and (x2, y2) the distance is |x1 − x2| + |y1 − y2|
+	* Once you figure out the total distance you need to set the total distance (for example, spot1.setDistance(65));
+- [ ] Use if statements to figure out which spot is closest, which is second closest, which is third closest. 
+	* You can access the distance for each spot using the getDistance() method (for examples, spot1.getDistance());
+- [ ] You will print out the locations in order from closest to farthest in table like the one shown below, 
+
+***************************************************************************************************************************
+My cars location: Timberline High School     x-coordinate: 88           y-coordinate:77
+***************************************************************************************************************************
+Parking Spot        unit cost       total cost       x-location          y-location           distance          available
+***************************************************************************************************************************
+1st and main            25             1.50             65                   45                  55               true
+downtown library        30             3.00             77                   56                  61               true
+Capital building        10              .75             35                   85                  58               true
+
+
+
+
+
 

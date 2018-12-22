@@ -9,14 +9,17 @@
  * </code></pre>
  *
  * @author CS121 Instructors
+ * @author Pluska
  */
 public class ParkingSpot
 {
 	private String street;
 	private int locationX;
 	private int locationY;
+	private int distance;
 	private boolean available;
 	private double costPerInterval;
+	private String totalCost;
 
 	/**
 	 * The minimum time interval which can be paid for.
@@ -69,6 +72,15 @@ public class ParkingSpot
 	{
 		this.costPerInterval = cost;
 	}
+	
+	/**
+	 * Sets the total cost for parking
+	 * @param totalCost the total cost to park.
+	 */
+	public void setTotalCost(String totalCost)
+	{
+		this.totalCost = totalCost;
+	}
 
 	/**
 	 * Sets the space to be available or not available
@@ -105,6 +117,23 @@ public class ParkingSpot
 	{
 		return locationY;
 	}
+	/**
+	 * Sets the distance from the car 
+	 * @param distance is the distance to the car
+	 */
+	public void setDistance(int distance)
+	{
+		this.distance = distance;
+    }
+	
+	/**
+	 * Get the distance to the parking spot
+	 * @return the distance
+	 */
+	pubic int getDistance()
+	{
+		return distance;
+	}
 
 	/* Returns a String representation of the parking spot
 	 * (non-Javadoc)
@@ -113,8 +142,7 @@ public class ParkingSpot
 	@Override
 	public String toString()
 	{
-		return "[street = " + street + ", locationX = " + locationX
-				+ ", locationY = " + locationY + ", available = " + available
-				+ ", costPerInterval = " + costPerInterval+ "]";
+		return street + "\t" + costPerInterval + "\t" + totalCost + "\t" + locationX + "\t" + locationY + "\t" distance + "\t" available;
+
 	}
 }
