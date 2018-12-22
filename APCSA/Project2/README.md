@@ -69,6 +69,8 @@ in the ParkingSpot class for expected parameters.
 	* You can access the distance for each spot using the getDistance() method (for examples, spot1.getDistance());
 - [ ] You will print out the locations in order from closest to farthest in table like the one shown below, 
 
+```
+
 ***************************************************************************************************************************
 My cars location: Timberline High School     x-coordinate: 88           y-coordinate:77
 ***************************************************************************************************************************
@@ -77,6 +79,7 @@ Parking Spot        unit cost       total cost       x-location          y-locat
 1st and main            25             1.50             65                   45                  55               true
 downtown library        30             3.00             77                   56                  61               true
 Capital building        10              .75             35                   85                  58               true
+```
 
 
 
