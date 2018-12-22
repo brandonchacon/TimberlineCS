@@ -77,8 +77,8 @@ My cars location: Timberline High School     x-coordinate: 88           y-coordi
 Parking Spot        unit cost       total cost       x-location          y-location           distance          available
 ***************************************************************************************************************************
 1st and main            25             1.50             65                   45                  55               true
-downtown library        30             3.00             77                   56                  61               true
-Capital building        10              .75             35                   85                  58               true
+downtown library        30             3.00             77                   56                  58               true
+Capital building        10              .75             35                   85                  61               true
 ```
 
 
