@@ -21,7 +21,7 @@ You are given a class named ParkingSpot that keeps track of the details about a 
 spot. Each parking spot instance will keep track of the following data.
 
 - Name of the spot.
-* The spot name must be specified when the spot is created (for example, "5th and main")
+** The spot name must be specified when the spot is created (for example, "5th and main")
 - Coordinates in a 2-dimensional city grid.
 --The (x, y) coordinates must be specified when the spot is created.
 – The charge per 10 minutes interval.
