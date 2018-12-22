@@ -1,8 +1,8 @@
-#Project Overview
+# Project Overview
 In this project, you will develop an application that randomly generates four parking spots
 and determines which parking spot is the closest to your current location.
 
-#Objectives
+# Objectives
 
 - Write a class with a main method (FindParking).
 - Use an existing, custom class (ParkingSpot).
@@ -10,12 +10,12 @@ and determines which parking spot is the closest to your current location.
 - Work with numeric data.
 - Work with standard input and output.
 
-#Specification
+# Specification
 
 - Existing class that you will use: ParkingSpot.java
 - Class that you will create: FindParking.java
 
-#ParkingSpot (provided class)
+# ParkingSpot (provided class)
 
 You are given a class named ParkingSpot that keeps track of the details about a parking
 spot. Each parking spot instance will keep track of the following data.
