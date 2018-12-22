@@ -67,7 +67,7 @@ in the ParkingSpot class for expected parameters.
 	* Once you figure out the total distance you need to set the total distance (for example, spot1.setDistance(65));
 - [ ] Use if statements to figure out which spot is closest, which is second closest, which is third closest. 
 	* You can access the distance for each spot using the getDistance() method (for examples, spot1.getDistance());
-- [ ] You will print out the locations in order from closest to farthest in table like the one shown below, 
+- [ ] You will print out the locations in order from closest to farthest in a table like the one shown below, 
 
 ```
 
