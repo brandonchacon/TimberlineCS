@@ -142,7 +142,7 @@ public class ParkingSpot
 	@Override
 	public String toString()
 	{
-		return street + "\t" + costPerInterval + "\t" + totalCost + "\t" + locationX + "\t" + locationY + "\t" distance + "\t" + available;
+		return street + "\t" + costPerInterval + "\t" + totalCost + "\t" + locationX + "\t" + locationY + "\t" + distance + "\t" + available;
 
 	}
 }
