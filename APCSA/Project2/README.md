@@ -61,7 +61,7 @@ in the ParkingSpot class for expected parameters.
 - [ ] Calculate how much it costs to park at each of the spots you created.  
 	* You can get the cost to park per 10 minutes using the getCostPerInterval() method (for example, spot1.getCostPerInterval());  
 	* You will need to convert the time in hh:mm to total time in minutes 
-	* You will then need to figure out the total cost to park. (parking meters do not round down!)
+	* You will then need to figure out the total cost to park at each spot. (parking meters do not round down!)
 	* The total cost will need to be converted to a String so it prints as expected (for example, $1.50);
 	* Once you figure out the total cost you need to set the total cost (for example, spot1.setTotalCost("$1.50"))
 		* Note: there are other ways to do the above using the NumberFormat class, but just use Strings here. 
@@ -79,9 +79,9 @@ My cars location: Timberline High School     x-coordinate: 88           y-coordi
 ***************************************************************************************************************************
 Parking Spot        unit cost       total cost       x-location          y-location           distance          available
 ***************************************************************************************************************************
-1st and main            25             1.50             65                   45                  55               true
-downtown library        30             3.00             77                   56                  58               true
-Capital building        10              .75             35                   85                  61               true
+1st and main            25             $1.50             65                   45                  55               true
+downtown library        30             $3.00             77                   56                  58               true
+Capital building        10             $ .75             35                   85                  61               true
 ```
 
 
