@@ -29,11 +29,16 @@ spot. Each parking spot instance will keep track of the following data.
 	* As with all parking meters, payment must be in whole intervals.
 * The ParkingSpot class has the following methods available for you to use:
 	* public ParkingSpot(String name, int locationX, int locationY) – (The Constructor)
-	* public double getCharge()
-	* public void setChart(double charge)
-	* public String getName()
+	* public boolean isAvailable()
+	* public double getCostPerInterval()
+	* public void setCostPerInterval(double cost)
+	* public void setTotalCost(String totalCost)
+	* public void setAvailable(boolean available)
+	* public String getStreet()
 	* public int getLocationX()
 	* public int getLocationY()
+	* public void setDistance(int distance)
+	* public int getDistance()
 	* public String toString()
 	
 # Your Tasks
