@@ -130,7 +130,7 @@ public class ParkingSpot
 	 * Get the distance to the parking spot
 	 * @return the distance
 	 */
-	pubic int getDistance()
+	public int getDistance()
 	{
 		return distance;
 	}
