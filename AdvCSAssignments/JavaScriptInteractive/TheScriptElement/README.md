@@ -154,72 +154,45 @@ When a script contains functionality that requires interaction with the DOM, the
 
 - [ ] Add the following files to your main assignment directory, 
 
-	- 
-	- 
+	- [https://github.com/hpluska/TimberlineCS/blob/master/AdvCSAssignments/JavaScriptInteractive/TheScriptElement/turnBlue.js](https://github.com/hpluska/TimberlineCS/blob/master/AdvCSAssignments/JavaScriptInteractive/TheScriptElement/turnBlue.js)
+	- [https://github.com/hpluska/TimberlineCS/blob/master/AdvCSAssignments/JavaScriptInteractive/TheScriptElement/turnYellow.js](https://github.com/hpluska/TimberlineCS/blob/master/AdvCSAssignments/JavaScriptInteractive/TheScriptElement/turnYellow.js)
 
-
-
-
-### The .length property
-
-One of an array's built-in properties is length and it returns the number of items in the array. We access the .length property just like we do with strings. Check the example below:
+- [ ] Cut and paste the following code into your index.html file, 
 
 ```
-const newYearsResolutions = ['Keep a journal', 'Take a falconry class'];
-
-console.log(newYearsResolutions.length);
-// Output: 2
+<!DOCTYPE html> 
+<html>
+ 
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script id="blue" src="turnBlue.js"></script>
+  <script id="yellow" src="turnYellow.js"></script>
+  </head>
+  
+  <body>		
+   	<p class="centered" id="logo">Code is Lit</p>
+  </body>
+</html>
 ```
+- [ ] We want the "Code is Lit" to be blue! Add a defer attribute to the turnBlue.js script to make it the last script that is downloaded and executed.
 
-In the example above, we log newYearsResolutions.length to the console using the following steps:
+### Async attribute
 
-- We use dot notation, chaining a period with the property name to the array, to access the length property of the newYearsResolutions array.
-- Then we log the length of newYearsResolution to the console.
-- Since newYearsResolution has two elements, 2 would be logged to the console.
-
-When we want to know how many elements are in an array, we can access the .length property.
-
-- [ ] Copy and paste the code below into your app.js file, 
-
-```
-const objectives = ['Learn a new languages', 'Read 52 books', 'Run a marathon'];
-```
-
-Find the length of the objectives array and log it to the console.
-
-### The .push() Method
-
-Let's learn about some built-in JavaScript methods that make working with arrays easier. These methods are specifically called on arrays to make common tasks, like adding and removing elements, more straightforward.
-
-One method, .push() allows us to add items to the end of an array. Here is an example of how this is used:
+The async attribute loads and executes the script asynchronously with the rest of the webpage. This means that, similar to the defer attribute, the HTML parser will continue parsing the rest of the HTML as the script is downloaded in the background. However, with the async flag, the script will not wait until the entire page is parsed: it will execute immediately after it has been downloaded. Here is an example of the async tag:
 
 ```
-const itemTracker = ['item 0', 'item 1', 'item 2'];
-
-itemTracker.push('item 3', 'item 4');
-
-console.log(itemTracker); 
-// Output: ['item 0', 'item 1', 'item 2', 'item 3', 'item 4'];
+<script src="example.js" async> </script>
 ```
 
-So, how does .push() work?
+When is it useful?
 
-- We access the push method by using dot notation, connecting push to itemTracker with a period.
-- Then we call it like a function. That's because .push() is a function and one that JavaScript allows us to use right on an array.
-- .push() can take a single argument or multiple arguments separated by commas. In this case, we're adding two elements: 'item 3' and 'item 4' to itemTracker.
-- Notice that .push() changes, or mutates, itemTracker. You might also see .push() referred to as a destructive array method since it changes the initial array.
+Async is useful for scripts that are independent of other scripts in order to function accordingly. Thus, if it does not matter exactly at which point the script file is executed, asynchronous loading is the most suitable option as it optimizes web page load time.
 
-If you're looking for a method that will mutate an array by adding elements to it, then .push() is the method for you!
+- [ ] Each script tag restyles the "Code is lit" text. Add async attribute to both the turnBlue script and the turnYellow script.  Refresh the page multiple times. Notice the color of the text after each refresh. 
 
-- [ ] Copy and paste the code below into your app.js file, 
 
-```
-const chores = ['wash dishes', 'do laundry', 'take out trash'];
-```
 
-Add two elements to the chores array using .push().
 
-- [ ] Use console.log to print your chores array to make sure your items were added.
 
 ### The .pop() Method
 
