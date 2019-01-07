@@ -10,23 +10,9 @@ Web programmers use JavaScript to make web pages dynamic and interactive. This p
 
 This assignment will follow the same workflow as the last assignment.  You will begin by making a new assignment directory within which you will create an index.html file and a app.js file.  
 
-- [ ] First create a new folder on your computer called Arrays.  Then, open the folder in VS Code.
+- [ ] First create a new folder on your computer called TheScriptElement.  Then, open the folder in VS Code.
 
-- [ ] Add two new files to this folder, 
-
-- index.html
-- app.js
-
-- [ ] In your index.html file, add the following code,
-
-```
-<html>
-    <head>
-        <script src="app.js"></script>
-    </head>
-
-</html>
-``` 
+- [ ] Add an index.html file to this folder,  
 
 ### The <script> tag
 
@@ -46,6 +32,12 @@ Frankly, without the <script> tag, websites would be unclickable and a bit borin
 
 The <script> element, like most elements in HTML, has an opening and closing angle bracket. The closing tag marks the end of the content inside of the <script> element. Just like the <style> tag used to embed CSS code, you use the <script> tag to embed valid JavaScript code.
 
+- [ ] Download and save the following images into your assignment directory, 
+
+	- [https://github.com/hpluska/TimberlineCS/blob/master/AdvCSAssignments/JavaScriptInteractive/TheScriptElement/burger.png](https://github.com/hpluska/TimberlineCS/blob/master/AdvCSAssignments/JavaScriptInteractive/TheScriptElement/burger.png)
+
+	- [https://github.com/hpluska/TimberlineCS/blob/master/AdvCSAssignments/JavaScriptInteractive/TheScriptElement/normal.jpg](https://github.com/hpluska/TimberlineCS/blob/master/AdvCSAssignments/JavaScriptInteractive/TheScriptElement/normal.jpg)
+
 - [ ] Copy and paste the following code into index.html page, 
 
 ```
@@ -57,93 +49,95 @@ The <script> element, like most elements in HTML, has an opening and closing ang
   
 <body>
 	<section class = "container">
-  	<img src = "normal.png" id= "myImage">
-  	<p onclick="blooming()">Codecademy</p>
+  	<img src = "normal.jpg" id= "myImage">
+  	<p onclick="food()">Click Me</p>
 	</section>
 </body>
   
 <script>
-  function blooming() {
-      var image = document.getElementById('myImage');
-      if(image.src.match("normal")) {
-          image.src = "flower.png";
-      } else {
-          image.src = "normal.png";
-      }
-  }  
+  
 </script>
   
 </html>
 ```
 
-- [ ] Use console.log() to print hobbies to the console.
-
-### Accessing Elements
-
-Each element in an array has a numbered position known as its index. We can access individual items using their index, which is similar to referencing an item in a list based on the item's position.
-
-Arrays in JavaScript are zero-indexed, meaning the positions start counting from 0 rather than 1. Therefore, the first item in an array will be at position 0. Let's see how we could access an element in an array:
+- [ ] Copy this JavaScript code and paste it between the opening and closing <script> tags.
 
 ```
-let cities = ['New York', 'Beijing', 'Nairobi'];
+function food() {
+      var image = document.getElementById('myImage');
+      if(image.src.match("normal")) {
+          image.src = "burger.png";
+      } else {
+          image.src = "normal.jpg";
+      }
+  } 
+ 
 ```
+- [ ] Save everything, then open your index.html page in your browswer.  See what happens when you click the "click me" text
 
-In the code above, 
+### The src attribute
 
-- cities is an array that has three elements
-- We are using bracket notation, [] with the index after the name of the array to access the element. 
-- cities[0] will access the element at index 0 in the array cities. You can think of cities[0] as accessing the space in memory that holds the string 'New York'.
+Since you know how to use a <script> element with embedded code, let's talk about linking code. Linking code is preferable because of a programming concept called Separation of Concerns (SoC). Instead of having messy code that is all in the same file, web developers separate their code into different files, making each “concern” easier to understand and more convenient when changes must be made.
 
-You can also access individual characters in a string using bracket notation and the index. For instance, you can write:
+For this exercise, instead of writing JavaScript in our HTML file, we are going to write it in its own file, and then reference this code with a file path name. We will do this using an attribute that may jog your memory: the src attribute!
 
-```
-const hello = 'Hello World';
-console.log(hello[6]);
-// Output: W
-```
-The console will display W since it is the character that is at index 6.
+If this seems familiar, that's because you may have been linking to external files with the <img> and <link> elements. The attribute is exactly the same, but now its value specifies the location of your script file.
 
-- [ ] Individual elements in arrays can also be stored to variables.  Copy and paste the code below into your app.js file.  Then, create a variable named listItem and set it equal to the first item in the famousSayings array using square bracket notation ([]).
-
-Use console.log() to print the listItem variable to the console.
-
-```
-const famousSayings = ['Fortune favors the brave.', 'A joke is a very serious thing.', 'Where there is love there is life.'];
-```
-
-- [ ] Now, console.log() the third element in the famousSayings array using bracket notation to access the element.
-
-Do not save the element to a new variable before you log it.
-
-- Awesome, you can access each element in an array using the index. But what happens if you try to access an index that is beyond the last element?
-
-Try to log the item at index [3] of famousSayings to the console. What is logged to the console?
-
-### Update Elements
-
-In the previous exercise, you learned how to access elements inside an array or a string by using an index. Once you have access to an element in an array, you can update its value.
+If the file is in the same project folder, the src value will be a relative path name. Below is an example of a relative pathname to a JavaScript file.
 
 ```
-let seasons = ['Winter', 'Spring', 'Summer', 'Fall'];
-
-seasons[3] = 'Autumn';
-console.log(seasons); 
-//Output: ['Winter', 'Spring', 'Summer', 'Autumn']
+<script src=/exampleScript.js> </script>
 ```
 
-In the example above, the seasons array contained the names of the four seasons.
+If you must refer to JavaScript hosted externally, or in a CDN, you can also link to that file location
 
-However, we decided that we preferred to say 'Autumn' instead of 'Fall'.
-
-The line, seasons[3] = 'Autumn'; tells our program to change the item at index 3 of the seasons array to be 'Autumn' instead of what is already there.
-
-- [ ] Copy and paste the array below into your app.js file, 
-
-Change the second element of the array groceryList to 'avocados'.
+- [ ] Add an empty <script> element to index.html.
 
 ```
-let groceryList = ['bread', 'tomatoes', 'milk'];
+<script></script>
 ```
+
+- [ ] Add an empty src attribute to the opening tag of your <script> element
+
+```
+<script src=" "> </script>
+```
+
+- [ ] Create a new file called script.js and save this to your assignment directory.  Copy and paste the code below into this file. 
+
+```
+function blooming() {
+      var image = document.getElementById('myImage');
+      if(image.src.match("normal")) {
+          image.src = "burger.png";
+      } else {
+          image.src = "normal.jpg";
+      }
+  }
+```
+
+- [ ] Make the src reference point to the script.js file you just created.
+
+- [ ] Save everything and reload your index.html file... everything should as before. 
+
+### How are scripts loaded?
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### Arrays with let and const
 
