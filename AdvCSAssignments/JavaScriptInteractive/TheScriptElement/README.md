@@ -123,50 +123,42 @@ function blooming() {
 
 ### How are scripts loaded?
 
- 
+A quick recap: the <script> element allows HTML files to load and execute JavaScript. The JavaScript can either go embedded inside of the <script> tag or the script tag can reference an external file. Before we dive deeper, let’s take a moment to talk about how browsers parse HTML files into web pages. This informs where to include a <script> element inside your HTML file.
 
+Browsers come equipped with HTML parsers that help browsers render the elements accordingly. Elements, including the <script> element, are by default, parsed in the order they appear in the HTML file. When the HTML parser encounters a <script> element, it loads the script then executes its contents before parsing the rest of the HTML. The two main points to note here are that:
 
+The HTML parser does NOT process the next element in the HTML file until it loads and executes the <script> element, thus leading to a delay in load time and resulting in a poor user experience.
+Additionally, scripts are loaded sequentially, so if one script depends on another script, they should be placed in that very order inside the HTML file.
 
+- [ ] Click on the link below to open a GIF
 
+	- [https://github.com/hpluska/TimberlineCS/blob/master/AdvCSAssignments/JavaScriptInteractive/TheScriptElement/ScriptNoAttribute.gif](https://github.com/hpluska/TimberlineCS/blob/master/AdvCSAssignments/JavaScriptInteractive/TheScriptElement/ScriptNoAttribute.gif)
 
+Notice, the GIF displays two scripts being loaded. The first script makes a Watering Can appear, the second script makes a Flower appear. This shows how scripts are loaded sequentially, and how they pause the HTML parser, which is why "Blooming" appears at the end.
 
+### Defer attribute
 
+When the HTML parser comes across a <script> element, it stops to load its content. Once loaded, the JavaScript code is executed and the HTML parser proceeds to parse the next element in the file. This can result in a slow load time for your website. HTML4 introduced the defer and async attributes of the <script> element to address the user wait-time in the website based on different scenarios.
 
+The defer attribute specifies scripts should be executed after the HTML file is completely parsed. When the HTML parser encounters a <script> element with the defer attribute, it loads the script but defers the actual execution of the JavaScript until after it finishes parsing the rest of the elements in the HTML file.
 
-
-
-
-
-
-
-### Arrays with let and const
-
-You may recall that you can declare variables with both the let and const keywords. Variables declared with let can be reassigned.
-
-Variables declared with the const keyword cannot be reassigned. However, elements in an array declared with const remain mutable. Meaning that we can change the contents of a const array, but cannot reassign a new array or a different value.
-
-The instructions below will illustrate this concept more clearly. Pay close attention to the similarities and differences between the condiments array and the utensils array as you complete the steps.
-
-- [ ] Copy and paste the code below into your app.js file, 
+Here is an example of the defer tag:
 
 ```
-let condiments = ['Ketchup', 'Mustard', 'Soy Sauce', 'Sriracha'];
-
-const utensils = ['Fork', 'Knife', 'Chopsticks', 'Spork'];
+<script src="example.js" defer> </script>
 ```
-Below the two existing arrays, re-assign the element in index 0 of condiments to 'Mayo'.
 
-Log the updated array, condiments, to the console.
+When is defer useful?
 
-- [ ] Below your code from Step 1, reassign condiments to be a new array that contains a single string ['Mayo']
+When a script contains functionality that requires interaction with the DOM, the defer attribute is the way to go. This way, it ensures that the entire HTML file has been parsed before the script is executed.
 
-Log the result to the console.
+- [ ] Add the following files to your main assignment directory, 
 
-Notice that you can re-assign elements in an array and re-assign an entire new array to a variable declared using the let keyword.
+	- 
+	- 
 
-- [ ] Below your code from Step 2, re-assign the last item from the utensils array to 'Spoon'.
 
-Log the updated array to the console.
+
 
 ### The .length property
 
